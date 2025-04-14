@@ -32,7 +32,7 @@ PYETJA:
 
 PËRGJIGJJA NË SHQIP:
 """
-            response = openai.Chat.Completions.create(
+            response = openai.chat.completions.create(
                 model="gpt-4",
                 messages=[{"role": "user", "content": prompt}]
             )
