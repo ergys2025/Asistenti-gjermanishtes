@@ -32,10 +32,14 @@ PYETJA:
 
 PËRGJIGJJA NË SHQIP:
 """
-            response = openai.chat.completions.create(
-                model="gpt-4",
-                messages=[{"role": "user", "content": prompt}]
-            )
-            answer = response["choices"][0]["message"]["content"]
-            st.success("Përgjigjja:")
-            st.write(answer)
+            from openai import OpenAI
+
+client = OpenAI(api_key=st.secrets["openai"]["api_key"])
+
+response = client.chat.completions.create(
+    model="gpt-4",
+    messages=[
+        {"role": "user", "content": prompt}
+    ]
+)
+answer = response.choices[0].message.content
