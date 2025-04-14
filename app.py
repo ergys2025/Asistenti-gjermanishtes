@@ -1,6 +1,6 @@
-import streamlit as st 
+import streamlit as st
 from PyPDF2 import PdfReader
-import openai
+from openai import OpenAI
 
 # Vendos çelësin nga secrets.toml
 openai.api_key = st.secrets["openai"]["api_key"]
